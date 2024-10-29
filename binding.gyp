@@ -3,29 +3,7 @@
     'dependencies': [
       "<!(node -p \"require('node-addon-api').targets\"):node_addon_api_except",
     ],
-    'conditions': [
-      ['OS=="win"', {
-        'msvs_configuration_attributes': {
-          'SpectreMitigation': 'Spectre'
-        },
-        'msvs_settings': {
-            'VCCLCompilerTool': {
-              'AdditionalOptions': [
-                '/guard:cf',
-                '/w34244',
-                '/we4267',
-                '/ZH:SHA_256'
-              ]
-            },
-            'VCLinkerTool': {
-              'AdditionalOptions': [
-                '/guard:cf'
-              ]
-            }
-          },
-      }],
-    ],
-  },
+     },
   'conditions': [
     ['OS=="win"', {
       'targets': [
